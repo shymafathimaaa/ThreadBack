@@ -1,0 +1,17 @@
+{
+  "name": "threadback",
+  "version": "1.0.0",
+  "description": "ThreadBack - AI-Powered Work Continuity System. Never restart from zero.",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "tsx watch server/src/index.ts",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build && tsc -p server",
+    "start": "node dist/server/index.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  }
+}

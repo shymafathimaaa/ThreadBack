@@ -1,0 +1,248 @@
+{
+  "settings": {
+    "userName": "Shyma Fathima",
+    "role": "Full-Stack Developer & AI Builder",
+    "aiProvider": "gemini",
+    "geminiApiKeyConfigured": false,
+    "theme": "dark",
+    "autoSnapshot": true,
+    "connectedSources": {
+      "github": {
+        "connected": true,
+        "status": "Active (repo: ThreadBack)"
+      },
+      "vscode": {
+        "connected": true,
+        "status": "Active extension"
+      },
+      "calendar": {
+        "connected": false,
+        "status": "Available"
+      }
+    },
+    "privacyStrict": true
+  },
+  "snapshots": [
+    {
+      "id": "snap-peoplehub-1",
+      "sessionId": "sess-peoplehub-1",
+      "projectId": "proj-peoplehub",
+      "projectName": "PeopleHub",
+      "task": "Employee Management",
+      "goal": "Build employee form UI and connect to POST endpoint",
+      "completed": "Employee form UI and validation schemas",
+      "decision": "Use Zod for form validation and type inference",
+      "blocker": "401 authentication error",
+      "blockerCause": "JWT token header missing on protected employee endpoints",
+      "context": "Employee form UI is polished with responsive fields and Zod validation. Paused because API returns 401 unauthorized on form submit.",
+      "nextAction": "Fix authentication headers and connect the employee POST endpoint",
+      "timestamp": "2026-10-05T12:24:12.675Z",
+      "tags": [
+        "peoplehub",
+        "auth",
+        "frontend"
+      ],
+      "whileYouWereAway": {
+        "detected": true,
+        "headline": "Teammate resolved JWT auth in PR #42",
+        "details": "Alex pushed updated bearer token validation and CORS middleware to develop branch.",
+        "updatedNextAction": "Pull latest develop branch and connect the employee POST endpoint directly"
+      }
+    },
+    {
+      "id": "snap-fishflow-1",
+      "sessionId": "sess-fishflow-1",
+      "projectId": "proj-fishflow",
+      "projectName": "FishFlow",
+      "task": "Fish Selection Flow",
+      "goal": "Implement tokenized pickup verification & batch tally",
+      "completed": "Fish selection cards, species filters, and live tally computation",
+      "decision": "Use token-based pickup verification system",
+      "blocker": "PDF token generation buffer stream error",
+      "blockerCause": "Binary stream encoding failed in serverless function",
+      "context": "Selection flow is fully responsive. Need to complete downloadable pickup receipt PDF.",
+      "nextAction": "Implement downloadable token PDF buffer generator and verify client stream",
+      "timestamp": "2026-10-04T13:24:12.675Z",
+      "tags": [
+        "fishflow",
+        "logistics",
+        "pdf"
+      ]
+    },
+    {
+      "id": "snap-roadlens-1",
+      "sessionId": "sess-roadlens-1",
+      "projectId": "proj-roadlens",
+      "projectName": "RoadLens",
+      "task": "Pothole Density Map View",
+      "goal": "Render WebGL geo-heatmap of detected road defects",
+      "completed": "Mapbox layer integration and GeoJSON parser pipeline",
+      "decision": "Use MapLibre GL with deck.gl for smooth 60fps rendering",
+      "blocker": "GeoJSON coordinate inversion on bounding box query",
+      "blockerCause": "Latitude and longitude swapped in spatial query worker",
+      "context": "Base map renders smoothly. Resolving coordinate ordering in bounding box filter.",
+      "nextAction": "Normalize lat/lng coordinates in spatial query worker",
+      "timestamp": "2026-10-03T15:24:12.675Z",
+      "tags": [
+        "roadlens",
+        "cv",
+        "maps"
+      ]
+    },
+    {
+      "id": "snap-agrismart-1",
+      "sessionId": "sess-agrismart-1",
+      "projectId": "proj-agrismart",
+      "projectName": "AgriSmart",
+      "task": "Telemetry Ingestion Pipeline",
+      "goal": "Stream MQTT sensor readings into timeseries charts",
+      "completed": "MQTT broker subscriber, threshold alert notifications, and timeseries view",
+      "decision": "Use WebSocket broadcast with 500ms debounce rate",
+      "blocker": "None - ready for live field testing",
+      "blockerCause": "All core ingestion tests passed",
+      "context": "Telemetry ingest pipeline running with 99.9% uptime in staging simulation.",
+      "nextAction": "Calibrate moisture sensor threshold triggers on live field telemetry",
+      "timestamp": "2026-10-02T15:24:12.675Z",
+      "tags": [
+        "agrismart",
+        "iot",
+        "telemetry"
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "id": "sess-peoplehub-1",
+      "projectId": "proj-peoplehub",
+      "projectName": "PeopleHub",
+      "task": "Employee Management",
+      "goal": "Build employee form UI and connect to POST endpoint",
+      "notes": [
+        {
+          "id": "n1",
+          "text": "Scaffolded EmployeeForm modal and input controls",
+          "timestamp": "2026-10-05T11:36:12.675Z",
+          "category": "progress"
+        },
+        {
+          "id": "n2",
+          "text": "Implemented Zod schema validation for name, email, department, salary",
+          "timestamp": "2026-10-05T12:00:12.675Z",
+          "category": "decision"
+        },
+        {
+          "id": "n3",
+          "text": "Form triggers submission successfully but server returns 401 Unauthorized",
+          "timestamp": "2026-10-05T12:18:12.675Z",
+          "category": "blocker"
+        }
+      ],
+      "status": "completed",
+      "startTime": "2026-10-05T11:24:12.675Z",
+      "endTime": "2026-10-05T12:24:12.675Z",
+      "durationSeconds": 3600,
+      "reflections": {
+        "accomplished": "Employee form UI and validation schemas",
+        "stoppedWhy": "401 authentication error on POST /api/employees",
+        "rememberNote": "Check Authorization header in axios client interceptor"
+      },
+      "snapshotId": "snap-peoplehub-1"
+    },
+    {
+      "id": "sess-fishflow-1",
+      "projectId": "proj-fishflow",
+      "projectName": "FishFlow",
+      "task": "Fish Selection Flow",
+      "goal": "Implement tokenized pickup verification & batch tally",
+      "notes": [
+        {
+          "id": "n4",
+          "text": "Built species picker and live weight calculator",
+          "timestamp": "2026-10-04T12:24:12.675Z",
+          "category": "progress"
+        },
+        {
+          "id": "n5",
+          "text": "Selected token verification over SMS OTP for offline marina usage",
+          "timestamp": "2026-10-04T12:54:12.675Z",
+          "category": "decision"
+        }
+      ],
+      "status": "completed",
+      "startTime": "2026-10-04T11:24:12.675Z",
+      "endTime": "2026-10-04T13:24:12.675Z",
+      "durationSeconds": 7200,
+      "snapshotId": "snap-fishflow-1"
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-peoplehub",
+      "name": "PeopleHub",
+      "description": "Internal employee management, team directory, and onboarding platform",
+      "goal": "Complete employee CRUD workflows and role-based permissions",
+      "currentTask": "Employee Management",
+      "progress": 68,
+      "status": "active",
+      "lastActive": "2026-10-05T12:24:12.675Z",
+      "color": "#A855F7",
+      "tags": [
+        "Internal Tool",
+        "React",
+        "Node.js"
+      ],
+      "activeSessionId": null
+    },
+    {
+      "id": "proj-fishflow",
+      "name": "FishFlow",
+      "description": "Real-time aquaculture supply chain & tokenized dock pickup manager",
+      "goal": "Streamline dockside fish batch handover with verifiable tokens",
+      "currentTask": "Fish Selection Flow",
+      "progress": 82,
+      "status": "active",
+      "lastActive": "2026-10-04T13:24:12.675Z",
+      "color": "#06B6D4",
+      "tags": [
+        "Supply Chain",
+        "TypeScript",
+        "Tokens"
+      ],
+      "activeSessionId": null
+    },
+    {
+      "id": "proj-roadlens",
+      "name": "RoadLens",
+      "description": "Computer vision roadway defect classification & civic hazard mapping",
+      "goal": "Deliver municipal dashboard with automated road repair priorities",
+      "currentTask": "Pothole Density Map View",
+      "progress": 45,
+      "status": "active",
+      "lastActive": "2026-10-03T15:24:12.675Z",
+      "color": "#EC4899",
+      "tags": [
+        "Computer Vision",
+        "GeoSpatial",
+        "FastAPI"
+      ],
+      "activeSessionId": null
+    },
+    {
+      "id": "proj-agrismart",
+      "name": "AgriSmart",
+      "description": "IoT precision agriculture soil telemetry and automated irrigation alerts",
+      "goal": "Deploy autonomous drip irrigation scheduler with weather predictive triggers",
+      "currentTask": "Telemetry Ingestion Pipeline",
+      "progress": 90,
+      "status": "active",
+      "lastActive": "2026-10-02T15:24:12.675Z",
+      "color": "#10B981",
+      "tags": [
+        "IoT",
+        "MQTT",
+        "Analytics"
+      ],
+      "activeSessionId": null
+    }
+  ]
+}
